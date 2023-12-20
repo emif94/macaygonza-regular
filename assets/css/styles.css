@@ -414,7 +414,7 @@ section.confirmar-asistencia img.iconLink{
 
 section.dresscode{
   text-align: center;
-  padding: 70px 0 70px;
+  padding: 0px 0 80px;
   background-color: #f5f2ef;
 }
 
@@ -741,4 +741,14 @@ section.contacto ul li i{
   }
 
 
+}
+
+/*GONZA HEAD*/
+#gonzaHead{
+  position: relative;
+  top: 16px;
+  opacity: 0;
+  padding:0;
+  margin: 0;
+   transition: opacity 5s ease;
 }

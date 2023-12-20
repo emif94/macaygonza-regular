@@ -83,7 +83,7 @@
 
         <div class="container">
       
-          <img src="assets/img/icono-frase.svg" alt="" class="icon corazon fade-in" style="opacity: 1;">
+          <img src="assets/img/icono-frase.svg"  style="opacity: 0;">
           <div class="div_frase animated fadeInDown" style="opacity: 1;">
             <h4>LLEGÓ EL GRAN DÍA...</h4><br>
       
@@ -290,7 +290,8 @@
     <section class="dresscode">
 
       <div class="container">
-        <img src="assets/img/bow-tie.png" width="100px">
+        <img id="gonzaHead" src="assets/img/gonza-head.png" width="100px" ><br>
+        <img id="bowTie" src="assets/img/bow-tie.png" width="100px">
 
         <h4>DRESS CODE</h4>
         <p>FORMAL</p>
@@ -409,6 +410,19 @@
     <script type='text/javascript' src='assets/js/jquery.fancybox.min.js'></script>
     <script type='text/javascript' src='assets/js/scripts.js'></script>
 
+    <script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('#bowTie').addEventListener('click', function() {
+        var gonzaHead = document.querySelector('#gonzaHead');
+        gonzaHead.style.opacity = 1;
+      });
+    });
+
+    </script>
 
 
   </body>
+
+</html>
