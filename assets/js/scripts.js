@@ -167,6 +167,17 @@ function formatYahooCalendarLink(startDate, endDate) {
     `https://calendar.yahoo.com/?dur=&et=${formattedEndDate}&st=${formattedStartDate}&title=${formattedTituloEvento}&v=60`
   );
 }
+
+
+//GONZA HEAD
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('#bowTie').addEventListener('click', function() {
+    var gonzaHead = document.querySelector('#gonzaHead');
+    gonzaHead.style.opacity = 1;
+  });
+});
+
+
 // ----------------------
 
 // EJECUCIONES AUTOMATICAS
