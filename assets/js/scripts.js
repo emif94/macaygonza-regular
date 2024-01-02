@@ -178,13 +178,33 @@ function formatYahooCalendarLink(startDate, endDate) {
 }
 
 
-//GONZA HEAD
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('#bowTie').addEventListener('click', function() {
-    var gonzaHead = document.querySelector('#gonzaHead');
-    gonzaHead.style.opacity = 1;
-  });
-});
+// HEADS 
+function renderRandomHead() {
+  var randomNumber = Math.random(); // Generates a random number between 0 and 1
+  var headsContainer = document.getElementById('heads');
+
+  if (randomNumber < 0.5) {
+    headsContainer.innerHTML = '<img id="macaHead" src="assets/img/maca-head.png">';
+  } else {
+    headsContainer.innerHTML = '<img id="gonzaHead" src="assets/img/gonza-head.png">';
+  }
+}
+
+
+      //Bow Click
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('#bowTie').addEventListener('click', function() {
+          var gonzaHead = document.querySelector('#gonzaHead');
+          var macaHead = document.querySelector('#macaHead');
+          if (gonzaHead) {
+            gonzaHead.style.opacity = 1;
+          }
+      
+          if (macaHead) {
+            macaHead.style.opacity = 1;
+          }
+        });
+      });
 
 
 // ----------------------
@@ -192,5 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // EJECUCIONES AUTOMATICAS
 
 calendarioPrueba();
+renderRandomHead();
 
 // ----------------------
