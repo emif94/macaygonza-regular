@@ -1,29 +1,38 @@
 function mobileCover() {  
-    $(".parallax-portada").parallax({
-      imageSrc: "assets/img/portada-mobile.jpeg",
-    });
+  $(".parallax-portada").parallax({
+    imageSrc: "assets/img/portada-mobile.jpeg",
+  });
+
+  // Render HTML for portada-mobile.jpeg
+  $("#changeImg").html(`
+    <a href="assets/img/galeria/macaygonza4.jpg" data-fancybox="images" data-caption="">
+      <img class="img-fluid" src="assets/img/galeria/macaygonza4.jpg" alt="">
+    </a>
+  `);
 }
 
 $(document).ready(function() {
   function handleScreenChange() {
     if ($(window).width() <= 760) {
-      
       mobileCover();
     } else {
       // Portada parallax PC
-        $(".parallax-portada").parallax({
-          imageSrc: "assets/img/portada-hd-copia.png",
-        });
+      $(".parallax-portada").parallax({
+        imageSrc: "assets/img/portada-hd-copia.png",
+      });
+
+      // Render HTML for portada-hd-copia.png
+      $("#changeImg").html(`
+        <a href="assets/img/galeria/macaygonza3.png" data-fancybox="images" data-caption="">
+          <img class="img-fluid" src="assets/img/galeria/macaygonza3.png" alt="">
+        </a>
+      `);
     }
   }
 
-  // Call on initial load
-  handleScreenChange();
-
-  // Listen for changes in screen size
-  $(window).resize(function() {
-    handleScreenChange();
-  });
+  // Call handleScreenChange on document ready and window resize
+  $(window).on("resize", handleScreenChange);
+  handleScreenChange(); // Call initially on document ready
 });
 
 
