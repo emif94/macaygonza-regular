@@ -193,15 +193,34 @@ function renderRandomHead() {
 
       //Bow Click
       document.addEventListener('DOMContentLoaded', function() {
+        var currentHead = 'maca';
+      
         document.querySelector('#bowTie').addEventListener('click', function() {
-          var gonzaHead = document.querySelector('#gonzaHead');
-          var macaHead = document.querySelector('#macaHead');
-          if (gonzaHead) {
-            gonzaHead.style.opacity = 1;
+          var headsContainer = document.getElementById('heads');
+      
+          // Remove existing image
+          while (headsContainer.firstChild) {
+            headsContainer.removeChild(headsContainer.firstChild);
           }
       
-          if (macaHead) {
-            macaHead.style.opacity = 1;
+          if (currentHead === 'maca') {
+            var gonzaHead = document.createElement('img');
+            gonzaHead.setAttribute('id', 'gonzaHead');
+            gonzaHead.setAttribute('src', 'assets/img/gonza-head.png');
+            headsContainer.appendChild(gonzaHead);
+            setTimeout(() => {
+              gonzaHead.style.opacity = 1; // Apply opacity after a short delay
+            }, 100); // Delay in milliseconds
+            currentHead = 'gonza';
+          } else {
+            var macaHead = document.createElement('img');
+            macaHead.setAttribute('id', 'macaHead');
+            macaHead.setAttribute('src', 'assets/img/maca-head.png');
+            headsContainer.appendChild(macaHead);
+            setTimeout(() => {
+              macaHead.style.opacity = 1; // Apply opacity after a short delay
+            }, 100); // Delay in milliseconds
+            currentHead = 'maca';
           }
         });
       });

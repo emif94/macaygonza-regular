@@ -414,8 +414,10 @@ section.confirmar-asistencia img.iconLink{
 
 section.dresscode{
   text-align: center;
-  padding: 0px 0 80px;
+  padding: 70px 0 70px;
   background-color: #f5f2ef;
+  max-height: 396px;
+  min-height: 396px;
 }
 
 section.dresscode h4 {
@@ -763,5 +765,16 @@ section.contacto ul li i{
     transition: opacity 5s ease;
     width:161px;
     z-index: 100;
-    margin-top: -50px
+    margin-top: -44px
+  }
+
+  /*Make bow button blink*/
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  .blinking-image {
+    animation: blink 2.5s infinite; /* Change 1s to adjust the speed of the blink */
   }
